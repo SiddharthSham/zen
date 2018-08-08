@@ -1,7 +1,7 @@
 # Site
 name: "Zen"
-description: "Visit when you are bored. You won't leave the same."
-meta_description: "A blog designed and written by Ssiddharth Sham"
+description: "My writing is an exercise in respect for my reader's time. :)"
+meta_description: "A blog designed and written by Siddharth Sham"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: /
@@ -16,6 +16,7 @@ authors:
     email: siddhsham@gmail.com
     web: https://siddharthsham.github.io/zen
     description: "Me? I just go on..."
+    instagram: www.instagram.com/SiddharthSham
 
 # Plugins
 plugins:
