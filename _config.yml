@@ -3,7 +3,7 @@ name: "Zen"
 description: "My writing is an exercise in respect for my reader's time. :)"
 meta_description: "A blog designed and written by Siddharth Sham"
 logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.png'
 baseurl: /
 google_analytics: 'UA-123602210-1'
 disqus: 'Zen'
