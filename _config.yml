@@ -1,6 +1,6 @@
 # Site
 name: "Zen"
-description: "My writing is an exercise in respect for my reader's time. :)"
+description: "My writing is an exercise in respect for your time. :)"
 meta_description: "A blog designed and written by Siddharth Sham"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.png'
@@ -17,7 +17,8 @@ authors:
     email: siddhsham@gmail.com
     web: https://siddharthsham.github.io/zen
     description: "Me? I'm probably drinking coffee, as I dream about alternate Universes in which blog pages type themselves..."
-    instagram: www.instagram.com/SiddharthSham
+    instagram: https://www.instagram.com/SiddharthSham
+    gravatar: 'assets/images/profile.jpg'
 
 # Plugins
 plugins:
