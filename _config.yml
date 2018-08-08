@@ -7,6 +7,7 @@ favicon: 'assets/images/logo.png'
 baseurl: /
 google_analytics: 'UA-123602210-1'
 disqus: 'Zen'
+mailchimp-list: ''
 
 # Authors
 authors:
