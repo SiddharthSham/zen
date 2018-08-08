@@ -18,7 +18,7 @@ authors:
     web: https://siddharthsham.github.io/zen
     description: "Me? I'm probably drinking coffee, as I dream about alternate Universes in which blog pages type themselves..."
     instagram: https://www.instagram.com/Siddharth_Sham
-    gravatar: 'zen/assets/images/profile.jpg'
+    gravatar: "/zen/assets/images/profile.jpg'
 
 # Plugins
 plugins:
