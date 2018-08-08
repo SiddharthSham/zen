@@ -11,33 +11,33 @@ post_class: post-template
 	<div class="row">
 
 		<!-- Post Share -->
-		<div class="col-md-2 pl-0">            
-           {% include share.html %}  
+		<div class="col-md-2 pl-0">
+           {% include share.html %}
 		</div>
-		
 
-		<!-- Post -->        
+
+		<!-- Post -->
         {% assign author = site.authors[page.author] %}
-        
+
 		<div class="col-md-9 flex-first flex-md-unordered">
 			<div class="mainheading">
 
                 <!-- Author Box -->
-                {% if page.author %}				
+                {% if page.author %}
 				<div class="row post-top-meta">
 					<div class="col-md-2">
-						<img class="author-thumb" src="https://www.gravatar.com/avatar/{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
+						<img class="author-thumb" src="https://instagram.fmaa2-1.fna.fbcdn.net/vp/454318416ae1b06d8af25fd5d8dd4c49/5C0EBF65/t51.2885-19/s150x150/37073625_505366306561829_3671323158264152064_n.jpg{{ author.gravatar }}?s=250&d=mm&r=x" alt="{{ author.display_name }}">
 					</div>
 					<div class="col-md-10">
 						<a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-						<span class="author-description">{{ author.description }}</span>						
+						<span class="author-description">{{ author.description }}</span>
 					</div>
-				</div>				
+				</div>
                 {% endif %}
-                
+
                 <!-- Post Title -->
-				<h1 class="posttitle">{{ page.title }}</h1> 
-                
+				<h1 class="posttitle">{{ page.title }}</h1>
+
 			</div>
 
 			<!-- Post Featured Image -->
@@ -52,13 +52,13 @@ post_class: post-template
             <!-- Post Date -->
             <p>
             <small>
-                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
+                <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>
                 {% if page.last_modified_at %}
                 (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{ page.last_modified_at | date: "%b %-d, %Y" }}</time>)
                 {% endif %}
                 </small>
             </p>
-            
+
 			<!-- Post Categories -->
 			<div class="after-post-tags">
 				<ul class="tags">
@@ -71,7 +71,7 @@ post_class: post-template
 				</ul>
 			</div>
 			<!-- End Categories -->
-            
+
             <!-- Prev/Next -->
             <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
             {% if page.previous.url %}
@@ -92,14 +92,14 @@ post_class: post-template
 <!-- End Article
 ================================================== -->
 
-  
+
 
 <!-- Begin Comments
 ================================================== -->
 <div class="container">
     <div id="comments" class="row justify-content-center mb-5">
-        <div class="col-md-8">              
-            {% include disqus.html %}                
+        <div class="col-md-8">
+            {% include disqus.html %}
         </div>
     </div>
 </div>
