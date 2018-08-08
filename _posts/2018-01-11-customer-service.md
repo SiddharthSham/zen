@@ -2,7 +2,7 @@
 layout: post
 title:  "What is this blog?"
 author: sid
-categories: [ Jekyll, tutorial ]
+categories: [ Blog, Hello World ]
 image: assets/images/11.jpg
 featured: true
 hidden: true
