@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is this blog?"
-author: Siddharth Sham
+author: sid
 categories: [ Jekyll, tutorial ]
 image: assets/images/11.jpg
 featured: true

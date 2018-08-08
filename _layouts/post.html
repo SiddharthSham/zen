@@ -23,6 +23,7 @@ post_class: post-template
 			<div class="mainheading">
 
                 <!-- Author Box -->
+                {% if page.author %}
 				<div class="row post-top-meta">
 					<div class="col-md-2">
 						<img class="author-thumb" src="https://instagram.fmaa2-1.fna.fbcdn.net/vp/454318416ae1b06d8af25fd5d8dd4c49/5C0EBF65/t51.2885-19/s150x150/37073625_505366306561829_3671323158264152064_n.jpg" alt="{{ author.display_name }}">
@@ -32,6 +33,7 @@ post_class: post-template
 						<span class="author-description">{{ author.description }}</span>
 					</div>
 				</div>
+                {% endif %}
 
                 <!-- Post Title -->
 				<h1 class="posttitle">{{ page.title }}</h1>
