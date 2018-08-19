@@ -7,7 +7,7 @@ const STATIC_CACHE_NAME = "zen-static";
 
 var urlsToCache = [];
 
-urlsToCache.push('/manifest.json')
+urlsToCache.push("/manifest.json")
 
 /* Cache pages
 {% for page in site.html_pages %}
