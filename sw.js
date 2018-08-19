@@ -7,10 +7,7 @@ const STATIC_CACHE_NAME = "zen-static";
 
 var urlsToCache = [];
 
-// Cache assets
-{% for asset in site.assets %}
-    urlsToCache.push("{{ asset.path }}")
-{% endfor %}
+urlsToCache.push('/manifest.json')
 
 /* Cache pages
 {% for page in site.html_pages %}
@@ -40,7 +37,6 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-/*
   self.addEventListener('activate', function(e) {
     e.waitUntil(
         Promise.all([
@@ -48,7 +44,7 @@ self.addEventListener('fetch', function(event) {
             caches.keys().then(function(cacheNames) {
                 return Promise.all(
                     cacheNames.map(function(cacheName) {
-                        if (cacheName !== APP_CACHE_NAME && cacheName !== STATIC_CACHE_NAME) {
+                        if (cacheName !== CACHE_NAME && cacheName !== STATIC_CACHE_NAME) {
                             console.log('deleting',cacheName);
                             return caches.delete(cacheName);
                         }
@@ -59,6 +55,7 @@ self.addEventListener('fetch', function(event) {
     );
 });
 
+/*
   this.addEventListener('fetch', function(event) {
     var response;
     event.respondWith(caches.match(event.request)

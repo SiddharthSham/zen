@@ -2,7 +2,7 @@
     "name": "Zen",
     "short_name": "Zen | Blog",
     "description": "Zen, a blogging platform made for Amritians",
-    "start_url": "/?utm_source=homescreen",
+    "start_url": "https://siddharthsham.github.io/zen/",
     "display": "standalone",
     "theme_color": "#212121",
     "icons": [
