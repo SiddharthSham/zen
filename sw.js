@@ -7,7 +7,7 @@ const STATIC_CACHE_NAME = "zen-static";
 
 var urlsToCache = [];
 
-// Cache assets
+/* Cache assets
 {% for asset in site.assets %}
     urlsToCache.push("{{ asset.path }}")
 {% endfor %}
@@ -15,7 +15,7 @@ var urlsToCache = [];
 // Cache pages
 {% for page in site.html_pages %}
   urlsToCache.push("{{ page.url }}")
-{% endfor %}
+{% endfor %}*/
 
 
 self.addEventListener('install', function(event) {
