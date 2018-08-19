@@ -5,18 +5,6 @@ layout: null
 const APP_CACHE_NAME = 'zen-app';
 const STATIC_CACHE_NAME = "zen-static";
 
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw.js').then(function(registration) {
-        // Registration was successful
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, function(err) {
-        // registration failed :(
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
-  }
-
 const CACHE_STATIC = [
   "/",
   {% for page in site.html_pages %}
@@ -27,7 +15,6 @@ const CACHE_STATIC = [
   {% endfor %}
 
   // can be automated rather than manual entries
-  "/assets/images/",
   "/assets/js/",
   "/assests/css/",
   "/about.html",
