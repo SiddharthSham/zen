@@ -3,7 +3,7 @@ layout: null
 ---
 
 const APP_CACHE_NAME = 'zen-app';
-const staticCacheName = "zen-static";
+const STATIC_CACHE_NAME = "zen-static";
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
@@ -17,7 +17,7 @@ if ('serviceWorker' in navigator) {
     });
   }
 
-const filesToCache = [
+const CACHE_STATIC = [
   "/",
   {% for page in site.html_pages %}
     '{{ page.url }}',
@@ -29,10 +29,10 @@ const filesToCache = [
   // can be automated rather than manual entries
   "/assets/images/",
   "/assets/js/",
-  "/assests/css/main.css",
-  "/assests/css/screen.css",
-  "/about.md",
-  "/index.html"
+  "/assests/css/",
+  "/about.html",
+  "/index.html",
+  "/manifest.json"
 ];
 
 self.addEventListener('install',function(e){
@@ -45,8 +45,7 @@ self.addEventListener('install',function(e){
             var static_cache = storage[0];
             var app_cache = storage[1];
             return Promise.all([
-              static_cache.addAll(CACHE_STATIC),
-              app_cache.addAll(CACHE_APP)]);
+              static_cache.addAll(CACHE_STATIC);
         })
     );
 });
