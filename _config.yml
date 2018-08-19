@@ -20,10 +20,13 @@ authors:
     instagram: https://www.instagram.com/Siddharth_Sham
     gravatar: 'assets/images/profile.jpg'
 
+gems: ['jekyll-offline']
+
 # Plugins
 plugins:
   - jekyll-paginate
   - jekyll-archives
+  - jekyll-offline
 
 # Archives
 jekyll-archives:
