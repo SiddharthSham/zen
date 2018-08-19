@@ -20,13 +20,11 @@ authors:
     instagram: https://www.instagram.com/Siddharth_Sham
     gravatar: 'assets/images/profile.jpg'
 
-gems: ['jekyll-offline']
-
 # Plugins
 plugins:
   - jekyll-paginate
   - jekyll-archives
-  - jekyll-offline
+  - jekyll-pwa-plugin
 
 # Archives
 jekyll-archives:
@@ -39,6 +37,20 @@ jekyll-archives:
 # Pagination
 paginate: 6
 paginate_path: /page:num/
+
+# PWA
+pwa:
+  sw_src_filepath: sw.js # Optional
+  sw_dest_filename: sw.js # Optional
+  dest_js_directory: assets/js # Required
+  precache_recent_posts_num: 5 # Optional
+  precache_glob_directory: / # Optional
+  precache_glob_patterns: # Optional
+    - "{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
+    - index.html
+  precache_glob_ignores: # Optional
+    - sw-register.js
+    - "fonts/**/*"
 
 # Other
 markdown: kramdown
