@@ -1,6 +1,6 @@
 {
     "name": "Zen",
-    "short_name": "Zen | Blog",
+    "short_name": "Zen - Blog",
     "description": "Zen, a blogging platform made for Amritians",
     "start_url": "/?utm_source=homescreen",
     "display": "standalone",

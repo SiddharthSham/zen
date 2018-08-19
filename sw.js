@@ -36,7 +36,7 @@ self.addEventListener('fetch', function(event) {
       });
     });
   };
-
+});
 
   self.addEventListener('activate', function(e) {
     e.waitUntil(
