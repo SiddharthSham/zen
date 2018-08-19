@@ -12,11 +12,6 @@ var urlsToCache = [];
     urlsToCache.push("{{ asset.path }}")
 {% endfor %}
 
-// Cache posts
-{% for post in site.blog %}
-  urlsToCache.push("{{ post.url }}")
-{% endfor %}
-
 // Cache pages
 {% for page in site.html_pages %}
   urlsToCache.push("{{ page.url }}")
