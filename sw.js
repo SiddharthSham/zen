@@ -10,11 +10,11 @@ var urlsToCache = [];
 //cache Manifest
 urlsToCache.push("/manifest.json")
 
-// Cache pages
+/* Cache pages
 {% for page in site.html_pages %}
   urlsToCache.push("{{ page.url }}")
 {% endfor %}
-
+*/
 
 self.addEventListener('install', function(event) {
   // Perform install steps
