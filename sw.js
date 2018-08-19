@@ -1,9 +1,18 @@
+---
+layout: null
+---
 
 const APP_CACHE_NAME = 'zen-app';
 const STATIC_CACHE_NAME = "zen-static";
 
 const CACHE_STATIC = [
   "/",
+  {% for page in site.html_pages %}
+    '{{ page.url }}',
+  {% endfor %}
+  {% for post in site.blog %}
+    '{{ post.url }}',
+  {% endfor %}
 
   // can be automated rather than manual entries
   "/assets/js/",
@@ -23,7 +32,8 @@ self.addEventListener('install',function(e){
             var static_cache = storage[0];
             var app_cache = storage[1];
             return Promise.all([
-              static_cache.addAll(CACHE_STATIC);
+              static_cache.addAll(CACHE_STATIC)
+            ])
         })
     );
 });
