@@ -7,12 +7,8 @@ const STATIC_CACHE_NAME = "zen-static";
 
 var urlsToCache = [];
 
-// Cache assets
-{% for asset in site.assets %}
-    urlsToCache.push("{{ asset.path }}")
-{% endfor %}
-
-urlsToCache.push('/manifest.json')
+//cache Manifest
+urlsToCache.push("/manifest.json")
 
 // Cache pages
 {% for page in site.html_pages %}
