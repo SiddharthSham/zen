@@ -2,42 +2,52 @@
 layout: null
 ---
 
-const APP_CACHE_NAME = 'zen-app';
+const CACHE_NAME = 'zen-app';
 const STATIC_CACHE_NAME = "zen-static";
 
-const CACHE_STATIC = [
-  "/",
-  {% for page in site.html_pages %}
-    '{{ page.url }}',
-  {% endfor %}
-  {% for post in site.blog %}
-    '{{ post.url }}',
-  {% endfor %}
+var urlsToCache = [];
 
-  // can be automated rather than manual entries
-  "/assets/js/",
-  "/assests/css/",
-  "/about.html",
-  "/index.html",
-  "/manifest.json"
-];
+// Cache assets
+{% for asset in site.assets %}
+    {% if asset.path contains '/assets/css'  or asset.path contains '/assets/js' or asset.path contains '/assets/fonts' %}
+    urlsToCache.push("{{ file.path }}")
+    {% endif %}
+{% endfor %}
 
-self.addEventListener('install',function(e){
-    e.waitUntil(
-        Promise.all([
-            caches.open(STATIC_CACHE_NAME),
-            caches.open(APP_CACHE_NAME),
-            self.skipWaiting()
-          ]).then(function(storage){
-            var static_cache = storage[0];
-            var app_cache = storage[1];
-            return Promise.all([
-              static_cache.addAll(CACHE_STATIC)
-            ])
-        })
-    );
+// Cache posts
+{% for post in site.blog %}
+  urlsToCache.push("{{ post.url }}")
+{% endfor %}
+
+// Cache pages
+{% for page in site.html_pages %}
+  urlsToCache.push("{{ page.url }}")
+{% endfor %}
+
+
+self.addEventListener('install', function(event) {
+  // Perform install steps
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
 });
 
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    cache.match(event.request).then(function(response) {
+      return response || fetch(event.request).then(function(response) {
+        cache.put(event.request, response.clone());
+        return response;
+      });
+    })
+  );
+});
+
+/*
   self.addEventListener('activate', function(e) {
     e.waitUntil(
         Promise.all([
@@ -72,4 +82,4 @@ self.addEventListener('install',function(e){
         return response.clone();
       })
     );
-  });
+  });*/
