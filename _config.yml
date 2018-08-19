@@ -40,8 +40,8 @@ paginate_path: /page:num/
 
 # PWA
 pwa:
-  sw_src_filepath: sw.js # Optional
-  sw_dest_filename: sw.js # Optional
+  sw_src_filepath: /sw.js # Optional
+  sw_dest_filename: /sw.js # Optional
   dest_js_directory: assets/js # Required
   precache_recent_posts_num: 5 # Optional
   precache_glob_directory: / # Optional
