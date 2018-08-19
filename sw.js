@@ -9,9 +9,7 @@ var urlsToCache = [];
 
 // Cache assets
 {% for asset in site.assets %}
-    {% if asset.path contains '/assets/css'  or asset.path contains '/assets/js' or asset.path contains '/assets/fonts' %}
-    urlsToCache.push("{{ file.path }}")
-    {% endif %}
+    urlsToCache.push("{{ asset.path }}")
 {% endfor %}
 
 // Cache posts
