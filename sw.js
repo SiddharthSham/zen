@@ -1,18 +1,9 @@
----
-layout: null
----
 
 const APP_CACHE_NAME = 'zen-app';
 const STATIC_CACHE_NAME = "zen-static";
 
 const CACHE_STATIC = [
   "/",
-  {% for page in site.html_pages %}
-    '{{ page.url }}',
-  {% endfor %}
-  {% for post in site.blog %}
-    '{{ post.url }}',
-  {% endfor %}
 
   // can be automated rather than manual entries
   "/assets/js/",
