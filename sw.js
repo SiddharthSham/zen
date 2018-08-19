@@ -28,15 +28,15 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    cache.match(event.request).then(function(response) {
-      return response || fetch(event.request).then(function(response) {
-        cache.put(event.request, response.clone());
-        return response;
+  var updateCache = function(request){
+    return caches.open('zen-app').then(function (cache) {
+      return fetch(request).then(function (response) {
+        console.log('add page to offline'+response.url)
+        return cache.put(request, response);
       });
-    })
-  );
-});
+    });
+  };
+
 
   self.addEventListener('activate', function(e) {
     e.waitUntil(
