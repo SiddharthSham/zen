@@ -42,6 +42,9 @@
 
   ga('create', '{{site.google_analytics}}', 'auto');
   ga('send', 'pageview');
+
+  importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.4.1/workbox-sw.js');
+  workbox.googleAnalytics.initialize();
 </script>
 {% endif %}
 <body class="{{ layout }}">
@@ -195,15 +198,13 @@
 
 <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
 
-<script type="text/javascript">
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("{{ site.baseurl }}/sw.js").then(function(registration) {
-        console.log("Service Worker registration successful with scope: ", registration.scope);
-      }).catch(function(err) {
-        console.log("Service Worker registration failed: ", err);
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('{{ site.base_url }}/sw.js');
       });
     }
-  </script>
+    </script>
 
 </body>
 </html>
