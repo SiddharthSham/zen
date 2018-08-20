@@ -6,6 +6,10 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
+workbox.setConfig({
+  debug: true
+});
+
 workbox.googleAnalytics.initialize();
 
 workbox.routing.registerRoute(
