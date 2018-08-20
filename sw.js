@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(event) {
     });
   };
 });
-
+/*
   self.addEventListener('activate', function(e) {
     e.waitUntil(
         Promise.all([
@@ -55,7 +55,7 @@ self.addEventListener('fetch', function(event) {
         ])
     );
 });
-
+*/
 /*
   this.addEventListener('fetch', function(event) {
     var response;
