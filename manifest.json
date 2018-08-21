@@ -2,7 +2,7 @@
     "name": "Zen",
     "short_name": "Zen - Blog",
     "description": "Zen, a blogging platform made for Amritians",
-    "start_url": "/?homescreen=1",
+    "start_url": "/",
     "display": "standalone",
     "theme_color": "#212121",
     "icons": [

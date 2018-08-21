@@ -17,6 +17,14 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+  //cache index file
+  /\.(?:html)$/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'html-cache',
+  }),
+);
+
+workbox.routing.registerRoute(
   /\.(?:js|css)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'static-resources',
@@ -32,9 +40,9 @@ workbox.routing.registerRoute(
     cacheName: 'image-cache',
     plugins: [
       new workbox.expiration.Plugin({
-        // Cache only 20 images
-        maxEntries: 20,
-        // Cache for a maximum of athree days
+        // Cache only 10 images
+        maxEntries: 10,
+        // Cache for a maximum of three days
         maxAgeSeconds: 3 * 24 * 60 * 60,
       })
     ],
