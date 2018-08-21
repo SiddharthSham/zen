@@ -18,9 +18,9 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   //cache index file
-  /\.(?:html)$/,
+  /\.(?:html|md)$/,
   workbox.strategies.staleWhileRevalidate({
-    cacheName: 'html-cache',
+    cacheName: 'index-cache',
   }),
 );
 
@@ -63,3 +63,7 @@ workbox.routing.registerRoute(
     ],
   }),
 );
+
+workbox.routing.setCatchHandler(({url, event, params}) => {
+  console.log("Unknown error")
+});
