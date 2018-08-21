@@ -6,7 +6,14 @@ if (workbox) {
   console.log(`Boo! Workbox didn't load 😬`);
 }
 
-workbox.googleAnalytics.initialize();
+//workbox.googleAnalytics.initialize();
+
+workbox.routing.registerRoute(
+  /\.(?:json)$/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'manifest-cache',
+  }),
+);
 
 workbox.routing.registerRoute(
   /\.(?:js|css)$/,
