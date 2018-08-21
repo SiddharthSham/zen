@@ -18,9 +18,9 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   //cache index file
-  /\./,
+  /\.(?:html)$/,
   workbox.strategies.staleWhileRevalidate({
-    cacheName: 'index-cache',
+    cacheName: 'html-cache',
   }),
 );
 
