@@ -9,6 +9,7 @@ if (workbox) {
 //workbox.googleAnalytics.initialize();
 
 workbox.routing.registerRoute(
+  //cache manifest file
   /\.(?:json)$/,
   workbox.strategies.staleWhileRevalidate({
     cacheName: 'manifest-cache',
