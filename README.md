@@ -1,14 +1,43 @@
 # zen
 
-There's a guy who's so sure,
+The first production-ready build of Zen, a blogging engine.
+-----------------------------------------------------------
+The site is a complete Progressive Web App, with a perfect score of 100 in Lighthouse's audits.
 
-All that flutters is bold,
+A blogging platform built for Amritians, the web-app features::
+--------------------------------------------------------------
+  
+    Featured posts section (Specify in YAML front-matter)
+    Comments (powered by Disqus)
+    Mailing List (powered by MailChimp)
+    Google Analytics (Offline Analytics coming soon!)
+    ...and more!
 
-and he's flying an airway to lemon.
+The service worker currently included only performs caching and error handling. Routing when offline is tricky (how many blog posts offlined is too many?) so has not been deployed for now. May be included in future updates, though rebuilding with an PWA framework would be easier.
 
+Built with::
+-------------
 
-When he gets there he knows,
+    HTML5/CSS3/JS
+    Jekyll Templating Engine
+    Workbox-SW
 
-If the cars are all close,
+Run local server::
+------------------
+    
+    $ git clone https://github.com/SiddharthSham/zen.git
+    $ cd zen
+    $ gem install jekyll-paginate
+    $ gem install jekyll-archives
+    $ gem install github-pages
+    $ jekyll build   
+    $ jekyll serve
 
-With a bird he can get what he came for.
+Contributing::
+-------------
+
+    Fork the repo
+    Make your changes in the fork
+    Commit your changes
+    Test integrity of said changes
+    Submit a pull-request
