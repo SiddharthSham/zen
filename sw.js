@@ -55,7 +55,7 @@ workbox.routing.registerRoute(
     cacheName: 'google-fonts',
     plugins: [
       new workbox.expiration.Plugin({
-        maxEntries: 3,
+        maxEntries: 4,
       }),
       new workbox.cacheableResponse.Plugin({
         statuses: [0, 200]
@@ -65,5 +65,24 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.setCatchHandler(({url, event, params}) => {
-  console.log("Unknown error")
+  console.log("Unknown error, due to dev being lazy")
+});
+
+self.addEventListener('fetch', function(event) {
+  console.log('Fetch event for ', event.request.url);
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      if (response) {
+        console.log('Found ', event.request.url, ' in cache');
+        return response;
+      }
+      console.log('Network request for ', event.request.url);
+      return fetch(event.request)
+
+    }).catch(function(error) {
+
+      return caches.match('index.html');
+
+    })
+  );
 });
