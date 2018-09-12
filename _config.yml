@@ -1,7 +1,7 @@
 # Site
 name: "Zen"
 description: "Our writing is an exercise in respect for your time. :)"
-meta_description: "A blog designed and written by Siddharth Sham"
+meta_description: "A blogging platform designed by Siddharth Sham"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.png'
 baseurl: /

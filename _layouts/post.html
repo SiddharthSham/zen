@@ -25,12 +25,12 @@ post_class: post-template
                 <!-- Author Box -->
                 {% if page.author %}
 				<div class="row post-top-meta">
-					<div class="col-md-2">
+					<div class="col-md-2 mx-auto">
 						<img class="author-thumb" src="{{ author.gravatar | absolute_url}}" alt="{{ author.display_name }}">
 					</div>
 					<div class="col-md-10">
-						<a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.name }}</a><a target="_blank" href="{{ author.instagram }}" class="btn follow">Follow</a>
-						<span class="author-description">{{ author.description }}</span>
+						<!--<a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.name }}</a><a target="_blank" href="{{ author.instagram }}" class="btn follow">Follow</a>
+                        --><span class="author-description">{{ author.description }}</span>
 					</div>
 				</div>
                 {% endif %}
